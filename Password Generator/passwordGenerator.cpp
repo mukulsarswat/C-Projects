@@ -32,12 +32,21 @@ string passwordGenerator(int size, int num = 0, int symb = 0)   {  // Already de
 }
 
 int main() {
-    int number,specials;
+    while(true) {
+        int number,specials,len;
+        cout<<"Password length"<<endl;
+        cin>>len;
     cout<<"How many numbers do you want to add into your password"<<endl;
     cin>>number;
    cout<<"How many specials do you want to add into your password" <<endl;
    cin>>specials;
-    cout<<passwordGenerator(8,number,specials);
+   if(len<number+specials){
+       cout<<"Error,check inputs"<<endl;
+       
+   }
+    else cout<<passwordGenerator(len,number,specials);
     cout<<endl;
+       
+   }
     return 0;
 }
